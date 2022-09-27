@@ -7,7 +7,7 @@ public class GetSmallestAndLargest {
         String largest = "";
         // 'smallest' must be the lexicographically smallest substring of length 'k'
         // 'largest' must be the lexicographically largest substring of length 'k'
-        smallest = s;
+        smallest = s.substring(0,k);
         for (int i = 0; i <= s.length() - k; i++) {
             if (s.substring(i, i + k).compareTo(largest) >= 0) {
                 largest = s.substring(i, i + k);
