@@ -1,6 +1,6 @@
 package StringManipulationTests;
 import org.junit.Test;
-import static StringManipulation.GetSmallestAndLargest.getSmallestAndLargest;
+import static String_Manipulation.GetSmallestAndLargest.getSmallestAndLargest;
 import static org.junit.Assert.assertEquals;
 
 public class TestSmallestAndLargestSubstring {

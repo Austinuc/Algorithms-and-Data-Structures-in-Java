@@ -1,4 +1,4 @@
-package StringManipulation;
+package String_Manipulation;
 
 /**
  * CASE: Replaces the missing character in a string of odd number of characters with an underscore (_)

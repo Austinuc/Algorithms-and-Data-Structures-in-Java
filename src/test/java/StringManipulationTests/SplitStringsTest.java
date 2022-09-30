@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static StringManipulation.SplitStrings.splitStrings;
+import static String_Manipulation.SplitStrings.splitStrings;
 import static org.junit.Assert.*;
 
 public class SplitStringsTest {

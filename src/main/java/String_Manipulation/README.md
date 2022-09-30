@@ -1,0 +1,10 @@
+# Algorithms on String Data Structures in Java
+
+## Methodology
+Test Driven Development approach with jUnit 4.0 for the test cases.
+
+| Algorithm Challenge              | Function                                                                                                                                      |
+|----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| [Get the Smallest and Largest Substring](https://github.com/Austinuc/Algorithms-and-Data-Structures-in-Java/blob/main/src/main/java/StringManipulation/GetSmallestAndLargest.java) | Finds the lexicographically smallest and largest substrings of length 'k' from a given String 's'                                             |
+| [Palindromic strings](https://github.com/Austinuc/Algorithms-and-Data-Structures-in-Java/blob/main/src/main/java/StringManipulation/PalindromicString.java)          | Checks if a given string is a palindrome or not                                                                                               |
+| [Split String](https://github.com/Austinuc/Algorithms-and-Data-Structures-in-Java/blob/main/src/main/java/StringManipulation/SplitStrings.java) | splits the string into pairs of two characters. Replaces the missing character in a string of odd number of characters with an underscore (_) |

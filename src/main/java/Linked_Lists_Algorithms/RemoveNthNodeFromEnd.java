@@ -1,4 +1,4 @@
-package LinkedListsAlgorithms;
+package Linked_Lists_Algorithms;
 
 public class RemoveNthNodeFromEnd {
     public ListNode removeNthFromEnd(ListNode head, int n) {

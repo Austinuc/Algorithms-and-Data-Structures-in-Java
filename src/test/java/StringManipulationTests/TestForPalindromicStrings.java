@@ -2,7 +2,7 @@ package StringManipulationTests;
 
 import org.junit.Test;
 
-import static StringManipulation.PalindromicString.stringIsAPalindrome;
+import static String_Manipulation.PalindromicString.stringIsAPalindrome;
 import static org.junit.Assert.assertEquals;
 
 public class TestForPalindromicStrings {

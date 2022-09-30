@@ -1,4 +1,4 @@
-package StringManipulation;
+package String_Manipulation;
 
 public class GetSmallestAndLargest {
     public static String getSmallestAndLargest(String s, int k) {

@@ -1,4 +1,4 @@
-package StringManipulation;
+package String_Manipulation;
 
 /**
  * CASE: Given a string , print Yes if it is a palindrome, print No otherwise.

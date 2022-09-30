@@ -1,4 +1,4 @@
-package LinkedListsAlgorithms;
+package Linked_Lists_Algorithms;
 
 import org.junit.Test;
 
