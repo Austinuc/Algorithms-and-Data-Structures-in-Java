@@ -13,19 +13,19 @@ import java.util.List;
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-public class ListNode {
-    int val;
-    ListNode next;
+public class ListNode<T> {
+    T val;
+    ListNode<T> next;
     ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next;}
+    ListNode(T val) { this.val = val; }
+    ListNode(T val, ListNode<T> next) { this.val = val; this.next = next;}
 
-    public void addNodeInFront(ListNode node) {
+    public void addNodeInFront(ListNode<T> node) {
         node.next = this.next;
         this.next = node;
     }
-    public void addNodeAtEnd(ListNode node) {
-        ListNode ptr = this;
+    public void addNodeAtEnd(ListNode<T> node) {
+        ListNode<T> ptr = this;
         while (ptr != null) {
             if (ptr.next == null) {
                 ptr.next = node;
@@ -35,7 +35,7 @@ public class ListNode {
         }
     }
 
-    public String toString(ListNode head) {
+    public String toString(ListNode<T> head) {
         List<String> list = new ArrayList<>();
         if (head == null) return "[]";
         while(head != null) {

@@ -25,11 +25,11 @@ public class RemoveNthNodeFromEndTest {
 
     @Test
     public void testRemoveNthFromEnd2() {
-        ListNode head = new ListNode(1);
-        head.addNodeAtEnd(new ListNode(2));
-        head.addNodeAtEnd(new ListNode(3));
-        head.addNodeAtEnd(new ListNode(4));
-        head.addNodeAtEnd(new ListNode(5));
-        assertEquals("[1, 2, 3, 4]", head.toString(new RemoveNthNodeFromEnd().removeNthFromEnd(head, 1)));
+        ListNode head = new ListNode("a");
+        head.addNodeAtEnd(new ListNode("b"));
+        head.addNodeAtEnd(new ListNode("c"));
+        head.addNodeAtEnd(new ListNode("d"));
+        head.addNodeAtEnd(new ListNode("e"));
+        assertEquals("[a, b, c, d]", head.toString(new RemoveNthNodeFromEnd().removeNthFromEnd(head, 1)));
     }
 }
