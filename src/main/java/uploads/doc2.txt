@@ -1,1 +1,5 @@
-Doubt truth to be a liars
+The proofs of these identities
+are probably even more significant than the identities themselves. They
+will consist of showing that both sides of a given equation count the same
+kind of objects; they just do it in two different ways. Therefore, the two expressions must be equal to each other. This type of argument is the dream
+of most combinatorialists when they prove identities.

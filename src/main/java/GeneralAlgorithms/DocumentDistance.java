@@ -6,14 +6,14 @@ import java.util.*;
  *
  */
 
-public class CalculatingDocumentDistance {
+public class DocumentDistance {
 
     /**
      *
      * @param doc1
      * @param doc2
      */
-    public static void findDocumentDistanceBetween(String doc1, String doc2) {
+    public void findDocumentDistanceBetween(String doc1, String doc2) {
         Map<String, Integer> D1 = new HashMap<>();
         Map<String, Integer> D2 = new HashMap<>();
         Integer w1Count = 0, w2Count = 0;
@@ -37,15 +37,17 @@ public class CalculatingDocumentDistance {
             Double D1byD2 = dotProductBtw(D1, D2);
 //            System.out.println(D1byD2);
 //            System.out.println(normD1*normD2);
-            System.out.println(Math.acos(D1byD2/(normD1 * normD2)));
+            System.out.println(Math.acos(D1byD2/(normD1 * normD2))* Math.PI/180);
 
 
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static <T> Double dotProductBtw(Map<T, Integer> D1, Map<T, Integer> D2) {
+    private <T> Double dotProductBtw(Map<T, Integer> D1, Map<T, Integer> D2) {
         Double dotProduct = 0.0;
         for (Map.Entry<T, Integer> wordD1: D1.entrySet()) {
             if (D2.containsKey(wordD1.getKey())) {
@@ -55,7 +57,7 @@ public class CalculatingDocumentDistance {
         return dotProduct;
     }
 
-    private static <T> Double calculateNorm(Map<T, Integer> D) {
+    private  <T> Double calculateNorm(Map<T, Integer> D) {
         long sumOfValuesSquared = 0;
         for (Map.Entry<T, Integer> item: D.entrySet()) {
             sumOfValuesSquared += Math.pow(item.getValue(), 2);
@@ -63,7 +65,7 @@ public class CalculatingDocumentDistance {
         return Math.sqrt(sumOfValuesSquared);
     }
 
-    private static <T> void addWordToMap(Map<T, Integer> d, T[] words) {
+    private <T> void addWordToMap(Map<T, Integer> d, T[] words) {
         for (T word: words) {
             if (d.containsKey(word)) {
                 d.replace(word,d.get(word) + 1);
@@ -73,7 +75,7 @@ public class CalculatingDocumentDistance {
         }
     }
 
-    public static void main(String[] args) {
-        findDocumentDistanceBetween("src/main/java/uploads/doc1.txt", "src/main/java/uploads/doc2.txt");
-    }
+//    public static void main(String[] args) {
+//        findDocumentDistanceBetween("src/main/java/uploads/doc1.txt", "src/main/java/uploads/doc2.txt");
+//    }
 }
