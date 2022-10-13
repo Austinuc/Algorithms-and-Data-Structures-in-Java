@@ -1,27 +1,47 @@
 package Sorting_Algorithms;
 
-public class BinarySearch {
-    static int left = 0, right = 0;
-    public <T> int binarySearch(T[] sorted, T item) {
-        int length = 0;
-        while (sorted[length] != null) {
-            length++;
-        }
-        return 0;
-    }
+import static Sorting_Algorithms.InsertionSort.insertionSort;
+import static Sorting_Algorithms.MergeSort.mSort;
 
-    public <T> int searchRecursively(T[] sorted, T item) {
-        if (right - left <= 1) {
-            if (right == left || sorted[right] == item) {
-                return right;
-            } else if (sorted[left] == item) {
-                return left;
+public class BinarySearch {
+    public static int binarySearch(int a, int[] arr) {
+        insertionSort(arr, arr.length);
+
+        int i = 0, j = arr.length - 1;
+        while (i < j) {
+            if (arr[i] == a) {
+                return i;
+            }
+            if (arr[j] == a)
+                return j;
+            if (arr[(j+i)/2] == a) {
+                return (j+i)/2;
+            }
+            if (arr[(j+i)/2] > a) {
+                j = (j+1)/2 - 1;
+            }
+            if (arr[(j+i)/2] < a) {
+                i = (j+i)/2 +1;
             }
         }
-        if (1 < 8) {
+        return -1;
+    }
 
+    public static int binarySearchRec(int a, Integer[] arr, int i, int j) {
+//        Integer[] arr = mSort(array, 0, array.length);
+        if (arr[i] == a) {
+            return i;
         }
-        left = (right - left) / 2;
-        return 0;
+        if (arr[j] == a)
+            return j;
+        if (i >= j)
+            return -1;
+        if (arr[(j + i) / 2] > a) {
+            return binarySearchRec(a, arr, i, (j + 1) / 2 - 1);
+        }
+        if (arr[(j + i) / 2] < a) {
+            return binarySearchRec(a, arr, (j + i) / 2 + 1, j);
+        }
+        return (j + i) / 2;
     }
 }
