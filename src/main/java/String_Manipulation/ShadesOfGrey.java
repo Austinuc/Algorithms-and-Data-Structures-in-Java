@@ -7,7 +7,7 @@ public class ShadesOfGrey {
      * shades of grey in hexadecimal code (#aaaaaa for example).
      * The array should be sorted in ascending order starting with '#010101', '#020202', etc. (using lower case letters).
      *
-     * Conditions: if n > 254, only return an array of size 254
+     * Conditions: if n > 254, only return an array of size 254. #000000 & #ffffff are not permitted
      */
     static String[] shadesOfGrey(int num) {
         // returns n shades of grey in an array
