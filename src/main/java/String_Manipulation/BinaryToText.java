@@ -1,5 +1,7 @@
 package String_Manipulation;
 
+import java.math.BigInteger;
+
 /**
  * takes in a binary string and returns the equivalent decoded text (the text is ASCII encoded).
  */
