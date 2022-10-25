@@ -1,6 +1,7 @@
 package Sliding_Window_Algorithms;
 
-import java.util.*;
+import java.util.Map;
+import java.util.HashMap;
 
 public class FindAllPermutationsOfAStringInAnother {
 

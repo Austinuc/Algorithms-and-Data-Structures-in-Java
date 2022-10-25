@@ -11,7 +11,7 @@ public class MaximumSubArraySum {
         int sum_so_far = 0;
 
         for (int val : arr) {
-            sum_start_here = Math.max(0, sum_start_here + val);
+            sum_start_here = Math.max(0, sum_start_here + val); //reset to zero if sum < 0 and continue
             sum_so_far = Math.max(sum_so_far, sum_start_here);
         }
 
