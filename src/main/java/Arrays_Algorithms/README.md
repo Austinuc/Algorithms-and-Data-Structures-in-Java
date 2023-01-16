@@ -1,0 +1,6 @@
+# Algorithms for Arrays
+
+| Arrays Algorithm Challenge                                                                                                       | Description                                                                                                                                                |
+|----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Running Sum of 1d Array](https://github.com/Austinuc/Algorithms-and-Data-Structures-in-Java/blob/main/RunningSumOf1dArray.java) | Given an array of nums. We define a running sum of an array as runningSum[i] = sum(nums[0]...nums[i]). eg: Input: nums = [1,2,3,4] Output: [1,3,6,10]      |
+| [Find Pivot Index]()                                                                                                             | Returns the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right. |

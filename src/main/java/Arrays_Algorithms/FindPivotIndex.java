@@ -1,4 +1,4 @@
-package algorithms;
+package Arrays_Algorithms;
 
 /**
  * pivotIndex - Finds the pivot index of a given array

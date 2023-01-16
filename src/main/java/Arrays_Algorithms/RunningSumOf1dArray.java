@@ -1,4 +1,4 @@
-package algorithms;
+package Arrays_Algorithms;
 
 /**
  * Running Sum Of 1d Array: Given an array nums. We define a running sum of
@@ -10,7 +10,6 @@ public class RunningSumOf1dArray {
         for (int i = 0; i < nums.length; i++) {
             nums[i] += sum;
             sum = nums[i];
-
         }
         return nums;
     }
