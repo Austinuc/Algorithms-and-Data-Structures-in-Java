@@ -1,0 +1,69 @@
+
+        ArrayDeque<TreeNode> queue = new ArrayDeque<>();
+        ArrayDeque<TreeNode> parents = new ArrayDeque<>();
+        queue.add(root);
+//        parents.add(root);
+        TreeNode temp, parent = root, toDelete = null; int value = item;
+        boolean leftVisited = false, rightVisited = false;
+
+
+
+            while (!queue.isEmpty()) {
+                temp = queue.pollFirst();
+
+                if (leftVisited && (rightVisited || parent.right == null)) {
+                    if (parents.isEmpty()) break;
+                    parent = parents.pollFirst();
+                    leftVisited = rightVisited = false;
+                }
+
+                if (temp.val == item) {
+
+                    if (temp.left == null && temp.right == null) {
+                        if (parent.left != null && parent.left.equals(temp))
+                            parent.left = null;
+                        else parent.right = null;
+
+                        if (toDelete != null)
+                            toDelete.val = item;
+
+                        break;
+                    }
+                    toDelete = temp;
+                    queue.clear();
+                    parents.clear();
+                    queue.add(root);
+                    TreeNode t = null;
+                    while(!queue.isEmpty()) {
+                        t = queue.pollFirst();
+
+                        if (t.left != null)
+                            queue.addLast(t.left);
+                        if (t.right != null)
+                            queue.addLast(t.right);
+                    }
+//                    temp.val = t.val;
+                    item = t.val;
+                    queue.add(root);
+                    parent = root;
+                    leftVisited = rightVisited = false;
+                    continue;
+
+                }
+                if (!parents.isEmpty()) {
+                    if (!leftVisited) leftVisited = true;
+                    else rightVisited = true;
+                }
+
+                if (temp.left != null) {
+                    queue.addLast(temp.left);
+                    if (!(temp.left.left == null && temp.left.right == null))
+                        parents.addLast(temp.left);
+                }
+                if (temp.right != null) {
+                    queue.addLast(temp.right);
+                    if (!(temp.right.left == null && temp.right.right == null))
+                        parents.addLast(temp.right);
+                }
+
+            }

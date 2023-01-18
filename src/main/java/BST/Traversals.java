@@ -188,4 +188,33 @@ public class Traversals {
                 queue.addLast(ptr.right);
         }
     }
+
+    /**
+     * Prints the level order data in reverse order.
+     *
+     * The keynote here is that the right subtree is added to the queue first before the left subtree
+     * @param root given tree
+     */
+    public void levelOrderInReverse(TreeNode root) {
+        if (root == null) return;
+
+        TreeNode ptr;
+        ArrayDeque<TreeNode> queue = new ArrayDeque<>();
+        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
+
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            ptr = queue.pollFirst();
+
+            if (ptr.right != null)
+                queue.addLast(ptr.right);
+            if (ptr.left != null)
+                queue.addLast(ptr.left);
+
+            stack.push(ptr);
+        }
+
+        while (!stack.isEmpty())
+            System.out.println(stack.pop().val);
+    }
 }

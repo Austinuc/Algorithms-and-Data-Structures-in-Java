@@ -1,5 +1,11 @@
 # Algorithms and Data Structures in Java
-Simplified solutions to algorithm and data structure challenges in Java
+Simplified solutions to algorithms and data structures challenges in Java
+
+### Project Setup
+    Language: Java
+    Build system: Maven
+    JDK version: 19
+    IDE: IntelliJ
 
 | Algorithm Categories                                                                                                                          | Description                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
