@@ -52,8 +52,8 @@ public class Main {
             System.out.println(1);
             return 1;
         } else {
-            int prev = powers0f2(n / 2);
-            int curr = prev * 2;
+//            int prev = powers0f2(n / 2);
+            int curr = powers0f2(n / 2) * 2;
             System.out.println(curr);
             return curr;
             }
@@ -64,6 +64,8 @@ public class Main {
 //        System.out.println();
 //        fibonacci(8);
         powers0f2(13);
-        System.out.println(Arrays.toString(MergeSort.mSort(new Integer[]{6, 3, 2, 10, 1, 8, 0, -1}, 0, 8)));
+
+        System.out.println(Integer.toString(1 << 5,2));
+//        System.out.println(Arrays.toString(MergeSort.mSort(new Integer[]{6, 3, 2, 10, 1, 8, 0, -1}, 0, 8)));
     }
 }

@@ -56,7 +56,7 @@ public class Search {
     }
 
     /**
-     * Non BST Recursive solution. Using PreOrder traversal
+     * Non BST Recursive solution. Using PreOrder traversal. Performs exhaustive search on the tree
      * @param root given binary tree
      * @param value search value
      * @return subtree if found or null otherwise
