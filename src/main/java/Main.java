@@ -1,6 +1,9 @@
 import Sorting_Algorithms.MergeSort;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Predicate;
 
 public class Main {
@@ -59,13 +62,18 @@ public class Main {
             }
     }
 
+
+
     public static void main(String[] args) {
 //        printArrayInReverse(new char[] {'A','B','C','D','E','F','G'});
 //        System.out.println();
 //        fibonacci(8);
-        powers0f2(13);
-
-        System.out.println(Integer.toString(1 << 5,2));
+//        powers0f2(13);
+//        System.out.println(isPil("cdecd", List.of(0,0,0,0), List.of(0,1,2,3), List.of(0,1,1,0)));
 //        System.out.println(Arrays.toString(MergeSort.mSort(new Integer[]{6, 3, 2, 10, 1, 8, 0, -1}, 0, 8)));
+
+//        System.out.println(tri(5,6,4,2,7,5,7,5,4,2));
     }
+
+
 }
