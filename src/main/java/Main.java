@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
     static int index = 0;
@@ -63,8 +65,14 @@ public class Main {
     }
 
 
-
     public static void main(String[] args) {
+        double s = 12373/9.0;
+        System.out.println(s);
+
+        Pattern p = Pattern.compile("e", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher("ADCT9REODG");
+        System.out.println(m.find());
+
 //        printArrayInReverse(new char[] {'A','B','C','D','E','F','G'});
 //        System.out.println();
 //        fibonacci(8);

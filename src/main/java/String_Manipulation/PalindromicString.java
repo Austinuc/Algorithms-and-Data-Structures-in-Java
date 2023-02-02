@@ -1,7 +1,9 @@
 package String_Manipulation;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class PalindromicString {
 
@@ -69,7 +71,8 @@ public class PalindromicString {
         StringBuilder ans = new StringBuilder();
 
         for (int i = 0; i < startIndex.size(); i++) {
-            ans.append(isPalindrome(s.substring(startIndex.get(i), endIndex.get(i)+1), subs.get(i)) ? "1" : "0");
+            String subStr = s.substring(startIndex.get(i), endIndex.get(i)+1);
+            ans.append(isPalindrome(subStr, subs.get(i)) || subStr.length() == 1  ? "1" : "0");
         }
 
         return ans.toString();
@@ -77,17 +80,11 @@ public class PalindromicString {
     }
 
     public static boolean isPalindrome(String s, int num) {
-        int start = 0, end = s.length()-1, count = 0;
-
-        while (start < end) {
-            if (s.charAt(start) != s.charAt(end)) {
-                if (count >= num) return false;
-                count++;
-            }
-            start++;
-            end--;
+        Map<String, Integer> count = new HashMap<>();
+        for (String c : s.split("")) {
+            count.put(s, count.getOrDefault(s, 0) + 1);
         }
 
-        return true;
+        return num >= (count.values().stream().filter(c -> c % 2 != 0).count())/2;
     }
 }

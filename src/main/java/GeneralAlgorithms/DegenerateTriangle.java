@@ -1,5 +1,7 @@
 package GeneralAlgorithms;
 
+import java.util.ArrayList;
+
 /**
  * A triangle formed by the three point a(x1,y1), b(x2,y2) and c(x3,y3) is a non-degenerated triangle
  * if the following rules are respected (/ab/ is the length of the line between points a and b);
@@ -31,37 +33,24 @@ public class DegenerateTriangle {
         double bc = getLength(x2,y2,x3,y3);
         double ac = getLength(x1,y1,x3,y3);
 
-        double ap = getLength(x1,y1,xp,yp);
-        double bp = getLength(x2,y2,xp,yp);
-        double cp = getLength(x3,y3,xp,yp);
-
-        double aq = getLength(x1,y1,xq,yq);
-        double bq = getLength(x2,y2,xq,yq);
-        double cq = getLength(x3,y3,xq,yq);
-
 
         //Check if triangle is degenerate or not
         if (!((ab+bc > ac) && (bc+ac > ab) && (ac+ab > bc))) return 0;
 
         //Calculate main area of triangle
-        double mainArea = calcArea(ab, ac, bc);
+        double mainArea = calcArea(x1, y1, x2, y2, x3, y3);
 
         //calculate the areas of the 3 triangles formed by p on the sides' ab, bc, ac
-        double pArea = calcArea(ap, bp, ab);
-        pArea += calcArea(ap, cp, ac);
-        pArea += calcArea(bp, cp, bc);
+        double pArea = calcArea(x1, y1, x2, y2, xp, yp);
 
         //calculate the areas of the 3 triangles formed by q on the sides' ab, bc, ac
-        double qArea = calcArea(aq, bq, ab);
-        qArea += calcArea(aq, cq, ac);
-        qArea += calcArea(bq, cq, bc);
+        double qArea = calcArea(x1, y1, x2, y2, xq, yq);
 
 
         if (pArea == mainArea && qArea != mainArea) return 1;
         if (qArea == mainArea && pArea != mainArea) return 2;
         if (pArea == mainArea && qArea == mainArea) return 3;
         if (pArea != mainArea && qArea != mainArea) return 4;
-
 
         return -1;
 
@@ -71,8 +60,7 @@ public class DegenerateTriangle {
         return Math.sqrt((Math.pow(Math.abs(x1-x2),2) + Math.pow(Math.abs(y1-y2),2)));
     }
 
-    public static double calcArea(double a, double b, double c) {
-        double s = (a+b+c)*0.5;
-        return Math.sqrt((s*(s-a)*(s-b)*(s-c)));
+    public static double calcArea(int x1, int y1, int x2, int y2, int x3, int y3) {
+        return ((x1*(y2-y3))+ (x2*(y3-y1)) + (x3*(y1-y2)))*0.5;
     }
 }
